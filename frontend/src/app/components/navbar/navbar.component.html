@@ -1,0 +1,17 @@
+<nav>
+<div>
+<div >
+    Pizzeria
+</div>
+
+<ul>
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><img src="https://static.vecteezy.com/system/resources/previews/011/157/894/large_2x/pizzeria-emblem-on-blackboard-pizza-logo-template-emblem-for-cafe-restaurant-or-food-delivery-service-vector.jpg" alt="pizzeria"></a></li>
+    <li><a routerLink="/pizzas" routerLinkActive="active">Order Pizzas</a></li>
+    <li><a routerLink="/toppings" routerLinkActive="active">Build Ur Pizza</a></li>
+
+</ul>
+</div>
+<div>
+<button routerLink="/checkout" routerLinkActive="active"><i class="bi bi-cart-fill"></i> Shopping Cart <span class="badge rounded bg-dark" >{{cartCount}}</span></button>
+</div>
+</nav>
