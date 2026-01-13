@@ -25,6 +25,8 @@ export class CartService {
       quantity: 1,
       totalPrice: pizzaPrice + toppingsTotal,
     });
+
+    console.log('custom', this.cart);
   }
 
   removeByPizzaId(pizzaId: string) {

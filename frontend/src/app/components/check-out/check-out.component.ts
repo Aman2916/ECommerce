@@ -19,7 +19,6 @@ export class CheckOutComponent implements OnInit {
   constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit() {
-    //  ({pizzaCart:this.pizzas,toppingCart:this.toppings}=this.cartService.getCart());
     this.refreshCart();
   }
 
