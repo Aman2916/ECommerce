@@ -39,8 +39,6 @@ export class CheckOutComponent implements OnInit {
       (sum, t) => sum + t.price,
       0
     );
-    console.log('toppings', this.ingredientTotal);
-    console.log('pizzas', this.pizzaTotal);
   }
 
   IncreaseQty(index: number) {
