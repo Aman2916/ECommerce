@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -6,8 +6,8 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
-    cartCount:number=0
+export class NavbarComponent implements DoCheck {
+    cartCount=0
     constructor(private cartService:CartService){}
 
     ngDoCheck(){

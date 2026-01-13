@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { PizzaListComponent } from './components/pizza-list/pizza-list.component';
-import {HttpClientModule} from "@angular/common/http"
-import { PizzaService } from './services/pizza.service';
+import { HttpClientModule } from '@angular/common/http';
+
 import { ToppingListComponent } from './components/topping-list/topping-list.component';
 
 import { FormsModule } from '@angular/forms';
@@ -19,15 +19,10 @@ import { CheckOutComponent } from './components/check-out/check-out.component';
     HomeComponent,
     PizzaListComponent,
     ToppingListComponent,
-    CheckOutComponent
+    CheckOutComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers:[],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

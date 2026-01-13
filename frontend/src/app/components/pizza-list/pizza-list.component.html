@@ -1,48 +1,61 @@
 <div class="container mt-4">
-  <div class="row ">
-<div class="col-sm-6 mb-3  " *ngFor="let pizza of pizzas">
-  <div class="card p-2 w-100 h-100">
+  <div class="row">
+    <div class="col-sm-6 mb-3" *ngFor="let pizza of pizzas">
+      <div class="card p-2 w-100 h-100">
+        <div class="row">
+          <div class="col-md-3 d-flex flex-column align-items-center">
+            <h5>{{ pizza.name }}</h5>
+            <p class="mb-1">₹{{ pizza.price }}</p>
+            <img
+              *ngIf="pizza.type === 'veg'"
+              src="../assets/images/veg-icon.png"
+              class="food-icon"
+              alt="veg"
+            />
+            <img
+              *ngIf="pizza.type === 'nonveg'"
+              src="../assets/images/non-veg-icon.png"
+              class="food-icon"
+              alt="nonveg"
+            />
+          </div>
 
-    <div class="row ">
+          <div class="col-md-5">
+            <p>{{ pizza.description }}</p>
+            <strong>Ingredients:</strong>
+            <p>{{ getFormatedString(pizza.ingredients, "iname") }}</p>
+            <strong>Toppings:</strong>
+            <p>{{ getFormatedString(pizza.topping, "tname") }}</p>
+          </div>
 
-      <div class="col-md-3 d-flex flex-column align-items-center ">
-        <h5>{{ pizza.name }}</h5>
-        <p class="mb-1 ">₹{{ pizza.price }}</p>
-        <img *ngIf="pizza.type==='veg'" src="../assets/images/veg-icon.png" class="food-icon">
-        <img *ngIf="pizza.type==='nonveg'" src="../assets/images/non-veg-icon.png" class="food-icon">
-      </div>
+          <div class="col-md-4 text-center">
+            <img
+              [src]="pizza.image"
+              style="width: 120px"
+              class="mb-2"
+              alt="pizza"
+            />
 
-      <div class="col-md-5">
-        <p>{{ pizza.description }}</p>
-        <strong>Ingredients:</strong>
-        <p>{{ getFormatedString(pizza.ingredients,'iname') }}</p>
-        <strong>Toppings:</strong>
-        <p>{{ getFormatedString(pizza.topping,'tname') }}</p>
-      </div>
+            <div>
+              <button
+                *ngIf="isItemInCart(pizza.id)"
+                class="btn btn-danger btn-sm"
+                (click)="removePizzaFromCart(pizza.id)"
+              >
+                Remove
+              </button>
 
-      <div class="col-md-4 text-center">
-        <img [src]="pizza.image" style="width:120px;" class="mb-2">
-
-        <div>
-          <button
-            *ngIf="isItemInCart(pizza.id)"
-            class="btn btn-danger btn-sm"
-            (click)="removePizzaFromCart(pizza.id)">
-            Remove
-          </button>
-
-          <button
-            *ngIf="!isItemInCart(pizza.id)"
-            class="btn btn-warning btn-sm text-white"
-            (click)="addPizza(pizza)">
-            Add to Cart
-          </button>
+              <button
+                *ngIf="!isItemInCart(pizza.id)"
+                class="btn btn-warning btn-sm text-white"
+                (click)="addPizza(pizza)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
-    </div>
-  </div>
